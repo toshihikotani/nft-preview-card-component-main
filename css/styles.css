@@ -1,0 +1,14 @@
+@import url("typography.css");
+html, body {
+  min-width: 100vw;
+}
+
+body {
+  min-height: 100vh;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*# sourceMappingURL=styles.css.map */
