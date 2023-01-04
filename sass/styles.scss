@@ -1,13 +1,58 @@
 @import url('typography.css');
 
+/* COLORS */
+
+/* PRIMARY */
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+
+/* NEUTRAL */ 
+$very-dark-blue-main-bg:hsl(217, 54%, 11%);
+$very-dark-blue-card-bg: hsl(216, 50%, 16%);
+$white: hsl(0, 0%, 100%);
+
 html, body {
     min-width: 100vw;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     min-height: 100vh;
     box-sizing:content-box;
+    background-color: $very-dark-blue-main-bg;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 18px;
+}
+
+/* MAIN */
+main {
+    width: 280px;
+    height: 500px;
+    padding: 25px;
+    background-color: $very-dark-blue-card-bg;
+    border-radius: 15px;
+
+    /* EQUILIBRIUM IMAGE*/ 
+    .equilibrium {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    /* TITLE */
+    .title {
+        font-family: 'Outfit-SemiBold';
+        font-size: 1.20em;
+        color: $white;
+    }
+
+    /* DESCRIPTION */
+    .description {
+        font-family: 'Outfit-Light';
+        font-size: 0.90em;
+        color: $soft-blue;
+        line-height: 30px;
+    }
 }

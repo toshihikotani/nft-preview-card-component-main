@@ -1,14 +1,48 @@
 @import url("typography.css");
+/* COLORS */
+/* PRIMARY */
+/* NEUTRAL */
 html, body {
   min-width: 100vw;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
   box-sizing: content-box;
+  background-color: hsl(217deg, 54%, 11%);
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 18px;
+}
+
+/* MAIN */
+main {
+  width: 280px;
+  height: 500px;
+  padding: 25px;
+  background-color: hsl(216deg, 50%, 16%);
+  border-radius: 15px;
+  /* EQUILIBRIUM IMAGE*/
+  /* TITLE */
+  /* DESCRIPTION */
+}
+main .equilibrium {
+  width: 100%;
+  border-radius: 10px;
+}
+main .title {
+  font-family: "Outfit-SemiBold";
+  font-size: 1.2em;
+  color: hsl(0deg, 0%, 100%);
+}
+main .description {
+  font-family: "Outfit-Light";
+  font-size: 0.9em;
+  color: hsl(215deg, 51%, 70%);
+  line-height: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */
