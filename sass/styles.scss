@@ -31,14 +31,45 @@ body {
 main {
     width: 280px;
     height: 500px;
-    padding: 25px;
+    padding: 24px;
     background-color: $very-dark-blue-card-bg;
     border-radius: 15px;
 
     /* EQUILIBRIUM IMAGE*/ 
-    .equilibrium {
+    .image-box {
+        position: relative;
         width: 100%;
         border-radius: 10px;
+
+        .equilibrium {
+            position: relative;
+            width: inherit;     
+            border-radius: inherit;
+        }
+
+        .overlay {
+            position: absolute;
+            width: inherit;
+            border-radius: inherit;
+            height: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba($cyan, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: 0.5s ease;
+            cursor: pointer;
+        
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+
     }
 
     /* TITLE */
@@ -46,6 +77,12 @@ main {
         font-family: 'Outfit-SemiBold';
         font-size: 1.20em;
         color: $white;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        &:hover {
+            color: $cyan; 
+        }
     }
 
     /* DESCRIPTION */
@@ -53,6 +90,79 @@ main {
         font-family: 'Outfit-Light';
         font-size: 0.90em;
         color: $soft-blue;
-        line-height: 30px;
+        line-height: 26px;
+        margin: 12px 0px;
     }
+
+     /* NFT STATUS */
+    .nft-status {
+        display: flex;
+        justify-content: space-between;
+
+        .ethereum, .time {
+            margin: 4px;
+            font-size: 0.85em;
+        }
+
+        .ethereum {
+            font-family: 'Outfit-SemiBold';
+            color: $cyan;
+
+            .ethereum-icon {
+                content: url('../images/icon-ethereum.svg');
+                vertical-align: middle;
+                margin-right: 6px;
+            }
+        }
+        
+        .time {
+            font-family: 'Outfit-Regular';
+            color: $soft-blue;
+
+            .time-icon {
+                content: url('../images/icon-clock.svg');
+                vertical-align: middle;
+                margin-right: 6px;
+            }
+        }
+    }
+
+    /* HORIZONTAL LINE */
+    hr {
+        margin: 10px 0px 20px;
+        outline: none;
+        border: none;
+        height: 1px;
+        background-color: rgba($soft-blue, 0.7);
+        color: rgba($soft-blue, 0.7);
+    }
+
+     /* AVATAR PROFILE */
+     .avatar-profile {
+        display: flex;
+
+        img {
+            width: 32px;
+            height: 32px;
+            border: 1px solid $white;
+            border-radius: 50px;  
+        }
+
+        p {
+            margin: 6px 12px;
+            vertical-align: middle;
+            font-family: 'Outfit-Regular';
+            font-size: 0.85em;
+            color: $soft-blue;
+
+            .avatar-name {
+                color: $white;
+                cursor: pointer;
+
+                &:hover {
+                    color: $cyan; 
+                }
+            }
+        }
+     }
 }

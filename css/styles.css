@@ -22,27 +22,119 @@ body {
 main {
   width: 280px;
   height: 500px;
-  padding: 25px;
+  padding: 24px;
   background-color: hsl(216deg, 50%, 16%);
   border-radius: 15px;
   /* EQUILIBRIUM IMAGE*/
   /* TITLE */
   /* DESCRIPTION */
+  /* NFT STATUS */
+  /* HORIZONTAL LINE */
+  /* AVATAR PROFILE */
 }
-main .equilibrium {
+main .image-box {
+  position: relative;
   width: 100%;
   border-radius: 10px;
+}
+main .image-box .equilibrium {
+  position: relative;
+  width: inherit;
+  border-radius: inherit;
+}
+main .image-box .overlay {
+  position: absolute;
+  width: inherit;
+  border-radius: inherit;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 255, 247, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+main .image-box .overlay:hover {
+  opacity: 1;
 }
 main .title {
   font-family: "Outfit-SemiBold";
   font-size: 1.2em;
   color: hsl(0deg, 0%, 100%);
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+main .title:hover {
+  color: hsl(178deg, 100%, 50%);
 }
 main .description {
   font-family: "Outfit-Light";
   font-size: 0.9em;
   color: hsl(215deg, 51%, 70%);
-  line-height: 30px;
+  line-height: 26px;
+  margin: 12px 0px;
+}
+main .nft-status {
+  display: flex;
+  justify-content: space-between;
+}
+main .nft-status .ethereum, main .nft-status .time {
+  margin: 4px;
+  font-size: 0.85em;
+}
+main .nft-status .ethereum {
+  font-family: "Outfit-SemiBold";
+  color: hsl(178deg, 100%, 50%);
+}
+main .nft-status .ethereum .ethereum-icon {
+  content: url("../images/icon-ethereum.svg");
+  vertical-align: middle;
+  margin-right: 6px;
+}
+main .nft-status .time {
+  font-family: "Outfit-Regular";
+  color: hsl(215deg, 51%, 70%);
+}
+main .nft-status .time .time-icon {
+  content: url("../images/icon-clock.svg");
+  vertical-align: middle;
+  margin-right: 6px;
+}
+main hr {
+  margin: 10px 0px 20px;
+  outline: none;
+  border: none;
+  height: 1px;
+  background-color: rgba(139, 172, 218, 0.7);
+  color: rgba(139, 172, 218, 0.7);
+}
+main .avatar-profile {
+  display: flex;
+}
+main .avatar-profile img {
+  width: 32px;
+  height: 32px;
+  border: 1px solid hsl(0deg, 0%, 100%);
+  border-radius: 50px;
+}
+main .avatar-profile p {
+  margin: 6px 12px;
+  vertical-align: middle;
+  font-family: "Outfit-Regular";
+  font-size: 0.85em;
+  color: hsl(215deg, 51%, 70%);
+}
+main .avatar-profile p .avatar-name {
+  color: hsl(0deg, 0%, 100%);
+  cursor: pointer;
+}
+main .avatar-profile p .avatar-name:hover {
+  color: hsl(178deg, 100%, 50%);
 }
 
 /*# sourceMappingURL=styles.css.map */
