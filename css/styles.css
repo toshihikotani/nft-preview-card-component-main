@@ -2,6 +2,7 @@
 /* COLORS */
 /* PRIMARY */
 /* NEUTRAL */
+/* MIXINS */
 html, body {
   min-width: 100vw;
 }
@@ -136,5 +137,42 @@ main .avatar-profile p .avatar-name {
 main .avatar-profile p .avatar-name:hover {
   color: hsl(178deg, 100%, 50%);
 }
+
+/* PORTRAIT TABLET */
+/* LANDSCAPE TABLET */
+@media only screen and (min-width: 768px) {
+  main {
+    width: 300px;
+    height: 545px;
+    /* TITLE */
+    /* DESCRIPTION */
+    /* NFT STATUS */
+    /* HORIZONTAL LINE */
+    /* AVATAR PROFILE */
+  }
+  main .title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  main .description {
+    font-family: "Outfit-Light";
+    font-size: 1em;
+    color: hsl(215deg, 51%, 70%);
+  }
+  main .nft-status .ethereum, main .nft-status .time {
+    margin: 12px 4px;
+  }
+  main hr {
+    margin: 10px 0px 14px;
+  }
+  main .avatar-profile p {
+    margin: 6px 16px;
+    font-family: "Outfit-Regular";
+    font-size: 0.9em;
+    color: hsl(215deg, 51%, 70%);
+  }
+}
+/* LAPTOP/DESKTOP */
+/* LARGE LAPTOP/DESKTOP */
 
 /*# sourceMappingURL=styles.css.map */

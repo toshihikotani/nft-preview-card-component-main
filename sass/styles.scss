@@ -11,6 +11,31 @@ $very-dark-blue-main-bg:hsl(217, 54%, 11%);
 $very-dark-blue-card-bg: hsl(216, 50%, 16%);
 $white: hsl(0, 0%, 100%);
 
+/* MIXINS */
+@mixin displayFlexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fontStyle($fontFamily, $fontSize: 18px, $color){
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $color;
+}
+
+@mixin rightIconSet($url){
+    content: url($url);
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+@mixin commonPositionSet($position, $width, $border-radius){
+    position: $position;
+    width: $width;
+    border-radius: $border-radius;
+}
+
 html, body {
     min-width: 100vw;
 }
@@ -21,9 +46,7 @@ body {
     min-height: 100vh;
     box-sizing:content-box;
     background-color: $very-dark-blue-main-bg;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include displayFlexCenter;
     font-size: 18px;
 }
 
@@ -37,29 +60,21 @@ main {
 
     /* EQUILIBRIUM IMAGE*/ 
     .image-box {
-        position: relative;
-        width: 100%;
-        border-radius: 10px;
+        @include commonPositionSet(relative, 100%, 10px);
 
         .equilibrium {
-            position: relative;
-            width: inherit;     
-            border-radius: inherit;
+            @include commonPositionSet(relative, inherit, inherit);
         }
 
         .overlay {
-            position: absolute;
-            width: inherit;
-            border-radius: inherit;
+            @include commonPositionSet(absolute, inherit, inherit);
             height: 100%;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
             background-color: rgba($cyan, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include displayFlexCenter;
             opacity: 0;
             transition: 0.5s ease;
             cursor: pointer;
@@ -68,15 +83,11 @@ main {
                 opacity: 1;
             }
         }
-
-
     }
 
     /* TITLE */
     .title {
-        font-family: 'Outfit-SemiBold';
-        font-size: 1.20em;
-        color: $white;
+        @include fontStyle('Outfit-SemiBold', 1.20em, $white);
         margin-bottom: 10px;
         cursor: pointer;
 
@@ -87,9 +98,7 @@ main {
 
     /* DESCRIPTION */
     .description {
-        font-family: 'Outfit-Light';
-        font-size: 0.90em;
-        color: $soft-blue;
+        @include fontStyle('Outfit-Light', 0.90em, $soft-blue);
         line-height: 26px;
         margin: 12px 0px;
     }
@@ -105,24 +114,18 @@ main {
         }
 
         .ethereum {
-            font-family: 'Outfit-SemiBold';
-            color: $cyan;
+            @include fontStyle('Outfit-SemiBold', null, $cyan);
 
             .ethereum-icon {
-                content: url('../images/icon-ethereum.svg');
-                vertical-align: middle;
-                margin-right: 6px;
+                @include rightIconSet('../images/icon-ethereum.svg');
             }
         }
         
         .time {
-            font-family: 'Outfit-Regular';
-            color: $soft-blue;
+            @include fontStyle('Outfit-Regular', null, $soft-blue);
 
             .time-icon {
-                content: url('../images/icon-clock.svg');
-                vertical-align: middle;
-                margin-right: 6px;
+                @include rightIconSet('../images/icon-clock.svg');
             }
         }
     }
@@ -151,9 +154,7 @@ main {
         p {
             margin: 6px 12px;
             vertical-align: middle;
-            font-family: 'Outfit-Regular';
-            font-size: 0.85em;
-            color: $soft-blue;
+            @include fontStyle('Outfit-Regular', 0.85em, $soft-blue);
 
             .avatar-name {
                 color: $white;
@@ -165,4 +166,58 @@ main {
             }
         }
      }
+}
+
+/* PORTRAIT TABLET */
+@media only screen and (min-width:600px){
+
+}
+
+/* LANDSCAPE TABLET */
+@media only screen and (min-width:768px){
+    main {
+        width: 300px;
+        height: 545px;
+
+        /* TITLE */
+        .title {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* DESCRIPTION */
+        .description {
+            @include fontStyle('Outfit-Light', 1.0em, $soft-blue);
+        }
+
+        /* NFT STATUS */
+        .nft-status {
+
+            .ethereum, .time {
+                margin: 12px 4px;
+            }
+        }
+
+        /* HORIZONTAL LINE */
+        hr {
+            margin: 10px 0px 14px;
+        }
+
+        /* AVATAR PROFILE */
+        .avatar-profile {
+
+            p {
+                margin: 6px 16px;
+                @include fontStyle('Outfit-Regular', 0.90em, $soft-blue);
+            }
+        }
+    }
+}
+
+/* LAPTOP/DESKTOP */
+@media only screen and (min-width:992px){
+}
+
+/* LARGE LAPTOP/DESKTOP */
+@media only screen and (min-width:1200px){
 }
